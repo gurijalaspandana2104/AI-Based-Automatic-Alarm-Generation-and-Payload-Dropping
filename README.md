@@ -79,3 +79,11 @@ The system uses **YOLO-based object detection** for identifying humans and **Dro
 
 ---
 
+![WhatsApp Image 2024-11-29 at 14 41 43_526a9b7b](https://github.com/user-attachments/assets/042047b8-2bf2-4033-b5eb-6dffee7bacad)
+![WhatsApp Image 2024-11-29 at 14 45 11_d6fe99c4](https://github.com/user-attachments/assets/9f8553ed-c6c1-48cd-936b-7afe934328ae)
+![WhatsApp Image 2024-11-29 at 14 45 11_57e769cd](https://github.com/user-attachments/assets/104b50cb-d3d4-4a85-be6b-f78f11866223)
+![WhatsApp Image 2024-11-29 at 14 46 21_3251fb48](https://github.com/user-attachments/assets/70121be7-6413-4f0b-af86-1a33335cea0c)
+
+
+
+
