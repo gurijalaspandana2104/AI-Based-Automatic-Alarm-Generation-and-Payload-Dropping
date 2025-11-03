@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 🚁 AI-Based Disaster Management Drone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An **AI-powered autonomous drone system** designed for **disaster management and rescue operations**.  
+This project combines **Computer Vision**, **IoT**, and **autonomous navigation** to detect humans, deliver payloads (like medical kits), and assist in rescue missions during natural disasters such as floods or earthquakes.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 💡 Project Overview
 
-### `npm start`
+During disasters, access to affected areas is often limited.  
+This drone system provides **real-time detection and response** using **AI and sensors** — identifying humans in need, determining safe drop zones, and autonomously delivering relief payloads.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The system uses **YOLO-based object detection** for identifying humans and **DroneKit SDK** for flight control and mission execution, integrated with **LiDAR/ToF sensors** for accurate altitude and terrain detection.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧩 Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 👁️ Human Detection using YOLO
+- Integrated **YOLOv5/YOLOv7** for real-time object (human) detection.
+- Runs inference using **Jetson Xavier NX / Jetson Nano** for edge AI computation.
+- Capable of detecting humans in complex terrains and lighting conditions.
 
-### `npm run build`
+### 📦 Payload Delivery Mechanism
+- Custom payload drop module triggered automatically after detection confirmation.
+- Ensures safe release using altitude and object distance feedback from sensors.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📡 Autonomous Navigation
+- Controlled via **DroneKit-Python SDK** and **ArduPilot** flight controller (Pixhawk).
+- Supports **waypoint missions**, **RTL (Return-to-Launch)**, and **failsafe operations**.
+- Real-time telemetry (altitude, GPS, battery) available on ground station.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🌍 Sensor Integration
+- **LiDAR / ToF Laser Sensor:** Measures altitude with centimeter-level precision.  
+- **GPS Module:** For navigation and positional accuracy.  
+- **Camera Module:** For visual detection and live streaming.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🧠 AI and Control System
+- **AI:** YOLO model for human detection.
+- **Control System:** Python + DroneKit to automate drone movements and payload actions.
+- **Failsafe Algorithms:** Prevent crashes by maintaining minimum altitude and avoiding obstacles.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧰 Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Category | Technologies / Tools Used |
+|-----------|---------------------------|
+| Programming Languages | Python |
+| AI / CV | YOLOv5, YOLOv7, OpenCV |
+| Drone SDK | DroneKit-Python |
+| Sensors | LiDAR, ToF Laser, GPS, IMU, Camera |
+| Hardware | Jetson Xavier NX / Jetson Nano, Pixhawk (ArduPilot), Raspberry Pi |
+| Communication | MAVLink Protocol |
+| Development Tools | Google Colab, Mission Planner, QGroundControl |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ System Workflow
 
-## Learn More
+1. **Drone takes off** and follows pre-set waypoints (autonomous mission).  
+2. **Camera captures video feed** and sends it to the onboard AI system.  
+3. **YOLO model detects humans** in real time.  
+4. If a human is detected:
+   - Drone hovers and confirms detection.
+   - **Payload is dropped automatically** using the servo mechanism.  
+5. **Altitude data** is continuously monitored by **LiDAR/ToF sensors** for accuracy.  
+6. Drone returns to base after completing its mission (RTL).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 Learning Outcomes
 
-### Code Splitting
+- Integrated **AI and IoT for real-world robotics** applications.  
+- Learned **drone flight control and telemetry using DroneKit**.  
+- Gained hands-on experience with **Jetson edge AI devices** and **sensor calibration**.  
+- Developed understanding of **computer vision**, **autonomous navigation**, and **payload systems**.  
+- Applied **Python automation and hardware interfacing** to solve real disaster management problems.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
